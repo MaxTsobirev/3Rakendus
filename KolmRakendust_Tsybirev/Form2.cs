@@ -36,9 +36,9 @@ namespace KolmRakendust_Tsybirev
             };
 
             Button button = new Button { Text = "viktoriin", Location = new Point(200, 50), BackColor = Color.Blue };
-            Label label = new Label { Text = "Aega jäänud", AutoSize = true, };
+            label = new Label { Text = "Aega jäänud", AutoSize = true, };
             label.Location = new Point(15, 15);
-            Label label2 = new Label { BorderStyle = BorderStyle.FixedSingle, AutoSize = false, };
+            label2 = new Label { BorderStyle = BorderStyle.FixedSingle, AutoSize = false, };
             label2.Location = new Point(90, 12);
             Button start = new Button { Text = "Alusta", Location = new Point(200, 12), };
             start.Click += Start_Click;
@@ -139,14 +139,15 @@ namespace KolmRakendust_Tsybirev
             int time = 30;
             while (time != 0)
             {
-                l.Text = time.ToString() + " seconds";
+                label2.Text = time.ToString() + " seconds";
                 time -= 1;
                 await Task.Delay(1000);
             }
-            l.Text = "";
+            label2.Text = "";
             this.Enabled = false;
 
         }
+
 
 
     }
